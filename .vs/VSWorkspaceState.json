@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\github.com",
+    "\\src\\github.com\\NikkiShah93",
+    "\\src\\github.com\\NikkiShah93\\firstapp"
   ],
+  "SelectedNode": "\\src\\github.com\\NikkiShah93\\firstapp\\Main.go",
   "PreviewInSolutionExplorer": false
 }

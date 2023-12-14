@@ -1,6 +1,10 @@
 package main
+
 import "fmt"
 
-func main(){
-	fmt.Println("Hello Go!")
+func main() {
+	var i int = 42
+	fmt.Println(i)
+	b := 6
+	fmt.Println(b)
 }
