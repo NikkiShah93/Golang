@@ -1,0 +1,5 @@
+
+*.vsidx
+*.exe
+.vs/Golang/v17/.wsuo
+*.sqlite
