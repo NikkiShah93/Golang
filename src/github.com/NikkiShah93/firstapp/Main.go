@@ -54,4 +54,9 @@ func main() {
 	// this is called shadowing
 	counter = 13
 	fmt.Println(counter)
+	// one of the important things to remember
+	// while using go
+	// is that if you have un-used variables
+	// it won't like it
+	// and this will help keeping the application clean
 }
