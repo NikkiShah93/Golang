@@ -6,6 +6,16 @@ import "fmt"
 // you have to declare the type
 var t int = 8
 
+// other way you can define
+// variables outside of the main block
+// is to warp them in a var
+var (
+	actorName    string = "Elisabeth Sladen"
+	companion    string = "Sarah Jane Smith"
+	doctorNumber int    = 3
+	season       int    = 11
+)
+
 func main() {
 	// use this when you don't want
 	// want to initilaze the var when defining it
@@ -27,4 +37,6 @@ func main() {
 	fmt.Println(k)
 	// use printf for formatted strings
 	fmt.Printf("value is %v and type is %T", j, j)
+	fmt.Println()
+	fmt.Println("T value is:", t)
 }
