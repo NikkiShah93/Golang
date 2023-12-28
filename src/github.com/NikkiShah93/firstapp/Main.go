@@ -7,13 +7,16 @@ import "fmt"
 var t int = 8
 
 // other way you can define
-// variables outside of the main block
+// variables outside of the main block (at a packag level)
 // is to warp them in a var
 var (
 	actorName    string = "Elisabeth Sladen"
 	companion    string = "Sarah Jane Smith"
 	doctorNumber int    = 3
 	season       int    = 11
+)
+var (
+	counter int = 0
 )
 
 func main() {
@@ -39,4 +42,16 @@ func main() {
 	fmt.Printf("value is %v and type is %T", j, j)
 	fmt.Println()
 	fmt.Println("T value is:", t)
+	// if you declare a variable in the package level
+	// and then you declare it again iside main
+	// and try to declare it again
+	// it'll throw an error
+	// saying no new variable on the left side
+	// but you can reassign a new value
+	var counter int = 42
+	// can't do this counter := 13
+	// but can re-define inside the function
+	// this is called shadowing
+	counter = 13
+	fmt.Println(counter)
 }
