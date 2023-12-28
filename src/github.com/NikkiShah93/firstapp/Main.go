@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 // if you're defining a var outside main
 // you have to declare the type
@@ -84,7 +87,21 @@ func main() {
 	fmt.Printf("value of l is %v, and the type is %T", l, l)
 	// if we want to convert the type
 	// we can do the following
+	// you have to explicitly convert
 	var m float32
 	m = float32(l)
 	fmt.Printf("the value of m is %v, and the type is %T", m, m)
+	// but you can't do this with strings
+	// because what go interpet the string to be
+	// is to get the unicode char with that number
+	var s string
+	s = string(l)
+	fmt.Println(s)
+	// if you want to convert
+	// number to strings back and forth
+	// you need the strconv package
+	// and do the following
+	var ns string
+	ns = strconv.Itoa(l)
+	fmt.Println(ns)
 }
