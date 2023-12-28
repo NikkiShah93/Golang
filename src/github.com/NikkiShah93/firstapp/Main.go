@@ -59,4 +59,32 @@ func main() {
 	// is that if you have un-used variables
 	// it won't like it
 	// and this will help keeping the application clean
+	// this will help with improvements
+	// becuase you won't have any old variables
+	// sitting in your code
+	// two sets of rules for naming your var
+	// lowercase var are scoped to the package
+	// so anything that works with it
+	// can't see or use it
+	// if it's uppercase
+	// then go compiler
+	// will expose this to other packages
+	// and we also have the block scope
+	// when you have var inside a func
+	// it's never visible to ouside of the block itself
+	// for naming var
+	// if it's a simple var
+	// that has a short lifespan
+	// don't worry about it much
+	// for other var
+	// try longer more meaningful names
+	// if you're working with acronym
+	// use all uppercase
+	var l int = 42
+	fmt.Printf("value of l is %v, and the type is %T", l, l)
+	// if we want to convert the type
+	// we can do the following
+	var m float32
+	m = float32(l)
+	fmt.Printf("the value of m is %v, and the type is %T", m, m)
 }
