@@ -51,7 +51,7 @@ func main() {
 	fmt.Println(a * b)
 	fmt.Println(a / b)
 	fmt.Println(a % b)
-	// we also have operators in go
+	// we also have bitwise operators in go
 	// that'll help you get the following
 	// using the same variables
 	fmt.Println("Operators in action:")
@@ -80,5 +80,37 @@ func main() {
 	// because it'll be too big for it
 	fl = 2.1e14
 	fmt.Printf("%v, %T", fl, fl)
+	// for arithmetic operations on floats
+	// other than %, which is only available for ints
+	// we also don't have bitwise or shifting operators
+	// the rest will work as expected
+	// returning a floating point number
+	fn := 10.2
+	fmt.Println(fl + fn)
+	fmt.Println(fl - fn)
+	fmt.Println(fl * fn)
+	fmt.Println(fl / fn)
+	// the next set is the complex numbers
+	// which makes go a powerful language for data science
+	// there are two types
+	// 64 and 128
+	// because we're using float32 | float64
+	// for the real and imaginary parts
+	var t complex64 = 1 + 2i
+	fmt.Printf("%v, %T\n", t, t)
+	// and we all the operations that float has
+	// for complex numbers as well
+	// but then again
+	// they should be the same type
+	// similar to floats
+	var y complex64 = 2 + 5.2i
+	fmt.Println(t + y)
+	fmt.Println(t - y)
+	fmt.Println(t * y)
+	fmt.Println(t / y)
+	// you can aslo only access the real
+	// or the imaginary parts of the number
+	fmt.Printf("%v, %T\n", real(t), real(t))
+	fmt.Printf("%v, %T\n", imag(t), imag(t))
 
 }
