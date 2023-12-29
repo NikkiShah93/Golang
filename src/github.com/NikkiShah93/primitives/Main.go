@@ -69,4 +69,16 @@ func main() {
 	fmt.Println(w >> 3) // 2 ^ 3 / 2 ^ 3
 	fmt.Println(w >> 2) // 2 ^ 3 / 2 ^ 2
 	fmt.Println(w << 2) // 2 ^ 3 * 2 ^ 2
+	// now the floating point numbers
+	// we can generate them the following way
+	fl := 3.14   // if you let it infer the float
+	fl = 13.7e72 // it can handle this
+	// because it always use float64
+	// otherwise, if you're using float 32
+	// then it'll throw an error because
+	// it can go to 10 to 38th power
+	// because it'll be too big for it
+	fl = 2.1e14
+	fmt.Printf("%v, %T", fl, fl)
+
 }
