@@ -32,4 +32,33 @@ func main() {
 	// depending on the system
 	i := 42
 	fmt.Printf("%v, %T", i, i)
+	// you can also have unsigned ints
+	var ui uint16 = 42
+	fmt.Printf("%v, %T\n", ui, ui)
+	// we can't have uint of 64
+	// but there's byte
+	// which is the same as unit8
+	// and that's used for data streaming
+	// for encoding the data
+	// you can't do arithmathic with two different types of ints
+	// without converting one to the other
+	// and the number generated
+	// will always have the same type as the inputs
+	a := 10 // in binary 1010
+	b := 3  // in binary 0011
+	fmt.Println(a + b)
+	fmt.Println(a - b)
+	fmt.Println(a * b)
+	fmt.Println(a / b)
+	fmt.Println(a % b)
+	// we also have operators in go
+	// that'll help you get the following
+	// using the same variables
+	fmt.Println("Operators in action:")
+	fmt.Println(a & b) // 0010
+	fmt.Println(a | b) // 1011
+	// either one has or the other does
+	fmt.Println(a ^ b) // 1001
+	// if neither one has it
+	fmt.Println(a &^ b) // 0100
 }
