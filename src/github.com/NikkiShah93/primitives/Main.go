@@ -61,4 +61,12 @@ func main() {
 	fmt.Println(a ^ b) // 1001
 	// if neither one has it
 	fmt.Println(a &^ b) // 0100
+	// the next thing is bit shifting
+	w := 8 // 2^3
+	// will shif left 3 places
+	fmt.Println(w << 3) // 2 ^ 3 * 2 ^ 3
+	// shift right 3 places
+	fmt.Println(w >> 3) // 2 ^ 3 / 2 ^ 3
+	fmt.Println(w >> 2) // 2 ^ 3 / 2 ^ 2
+	fmt.Println(w << 2) // 2 ^ 3 * 2 ^ 2
 }
