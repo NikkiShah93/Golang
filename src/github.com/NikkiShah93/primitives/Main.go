@@ -8,6 +8,7 @@ import (
 func main() {
 	// first booleans
 	// simple, similar to other langs
+	// it's not an alias for other types
 	var n bool = true
 	fmt.Printf("value of n is %v, and type is %T\n", n, n)
 	n = false
@@ -143,5 +144,16 @@ func main() {
 	// for sending data to other applications
 	cb := []byte(s)
 	fmt.Printf("%v, %T\n", cb, cb)
+	// the next type is rune
+	// rune can represent any utf-32 char
+	// so any char can be up to 32 bits long
+	// but they don't have to
+	// they can be 1, 2, or 4 bytes long
+	// you need to use single qoutes for runes
+	// instead of double, which is used for strings
+	// rune is an alias for int32
+	// and they're not easy to work with
+	ru := 'a'
+	fmt.Printf("%v, %T\n", ru, ru)
 
 }
