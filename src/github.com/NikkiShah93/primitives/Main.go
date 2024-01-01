@@ -112,5 +112,36 @@ func main() {
 	// or the imaginary parts of the number
 	fmt.Printf("%v, %T\n", real(t), real(t))
 	fmt.Printf("%v, %T\n", imag(t), imag(t))
+	// you can also create a complex number
+	// using two floats
+	// where the first number will be the real
+	// and the second part will be the imaginary
+	var q complex128 = complex(5, 12)
+	fmt.Printf("%v, %T\n", q, q)
+	// the next type is the text type
+	// falls into two basic categories
+	// 1st is the string
+	// used for any utf-8 char
+	// but it can't encode every type
+	// you can treat strings
+	// like an array
+	// they're also immutable
+	s := "this is a string"
+	fmt.Printf("%v, %T\n", s, s)
+	fmt.Printf("%v, %T\n", s[2], s[2])
+	// if we want the actual string
+	// we should do the following
+	fmt.Printf("%v, %T\n", string(s[2]), s[2])
+	// the only arithmatic op
+	// for strings is + which is same as concat
+	s2 := "this is also a string"
+	fmt.Printf("%v, %T\n", s+s2, s+s2)
+	// we can also convert them into
+	// collections of bytes (slice of bytes)
+	// so the string will be changed to its ASCII values
+	// this is very useful
+	// for sending data to other applications
+	cb := []byte(s)
+	fmt.Printf("%v, %T\n", cb, cb)
 
 }
