@@ -31,9 +31,13 @@ func main() {
 	// an int will always be at least 32 bits
 	// but it could be 32, or 64 too
 	// depending on the system
+	// signed int needs a bit for the sign
+	// so they can go as large
 	i := 42
 	fmt.Printf("%v, %T", i, i)
 	// you can also have unsigned ints
+	// which since they don't have a sign
+	// they have more room to store data
 	var ui uint16 = 42
 	fmt.Printf("%v, %T\n", ui, ui)
 	// we can't have uint of 64
@@ -58,8 +62,10 @@ func main() {
 	fmt.Println("Operators in action:")
 	fmt.Println(a & b) // 0010
 	fmt.Println(a | b) // 1011
+	// exclusive or (xor)
 	// either one has or the other does
 	fmt.Println(a ^ b) // 1001
+	// and not
 	// if neither one has it
 	fmt.Println(a &^ b) // 0100
 	// the next thing is bit shifting
@@ -71,6 +77,7 @@ func main() {
 	fmt.Println(w >> 2) // 2 ^ 3 / 2 ^ 2
 	fmt.Println(w << 2) // 2 ^ 3 * 2 ^ 2
 	// now the floating point numbers
+	// they follow the IEEE-754 standard
 	// we can generate them the following way
 	fl := 3.14   // if you let it infer the float
 	fl = 13.7e72 // it can handle this
@@ -155,5 +162,4 @@ func main() {
 	// and they're not easy to work with
 	ru := 'a'
 	fmt.Printf("%v, %T\n", ru, ru)
-
 }
