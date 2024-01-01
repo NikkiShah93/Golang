@@ -8,6 +8,7 @@ import (
 func main() {
 	// first booleans
 	// simple, similar to other langs
+	// it's not an alias for other types
 	var n bool = true
 	fmt.Printf("value of n is %v, and type is %T\n", n, n)
 	n = false
@@ -30,9 +31,13 @@ func main() {
 	// an int will always be at least 32 bits
 	// but it could be 32, or 64 too
 	// depending on the system
+	// signed int needs a bit for the sign
+	// so they can go as large
 	i := 42
 	fmt.Printf("%v, %T", i, i)
 	// you can also have unsigned ints
+	// which since they don't have a sign
+	// they have more room to store data
 	var ui uint16 = 42
 	fmt.Printf("%v, %T\n", ui, ui)
 	// we can't have uint of 64
@@ -57,8 +62,10 @@ func main() {
 	fmt.Println("Operators in action:")
 	fmt.Println(a & b) // 0010
 	fmt.Println(a | b) // 1011
+	// exclusive or (xor)
 	// either one has or the other does
 	fmt.Println(a ^ b) // 1001
+	// and not
 	// if neither one has it
 	fmt.Println(a &^ b) // 0100
 	// the next thing is bit shifting
@@ -70,6 +77,7 @@ func main() {
 	fmt.Println(w >> 2) // 2 ^ 3 / 2 ^ 2
 	fmt.Println(w << 2) // 2 ^ 3 * 2 ^ 2
 	// now the floating point numbers
+	// they follow the IEEE-754 standard
 	// we can generate them the following way
 	fl := 3.14   // if you let it infer the float
 	fl = 13.7e72 // it can handle this
@@ -112,5 +120,46 @@ func main() {
 	// or the imaginary parts of the number
 	fmt.Printf("%v, %T\n", real(t), real(t))
 	fmt.Printf("%v, %T\n", imag(t), imag(t))
-
+	// you can also create a complex number
+	// using two floats
+	// where the first number will be the real
+	// and the second part will be the imaginary
+	var q complex128 = complex(5, 12)
+	fmt.Printf("%v, %T\n", q, q)
+	// the next type is the text type
+	// falls into two basic categories
+	// 1st is the string
+	// used for any utf-8 char
+	// but it can't encode every type
+	// you can treat strings
+	// like an array
+	// they're also immutable
+	s := "this is a string"
+	fmt.Printf("%v, %T\n", s, s)
+	fmt.Printf("%v, %T\n", s[2], s[2])
+	// if we want the actual string
+	// we should do the following
+	fmt.Printf("%v, %T\n", string(s[2]), s[2])
+	// the only arithmatic op
+	// for strings is + which is same as concat
+	s2 := "this is also a string"
+	fmt.Printf("%v, %T\n", s+s2, s+s2)
+	// we can also convert them into
+	// collections of bytes (slice of bytes)
+	// so the string will be changed to its ASCII values
+	// this is very useful
+	// for sending data to other applications
+	cb := []byte(s)
+	fmt.Printf("%v, %T\n", cb, cb)
+	// the next type is rune
+	// rune can represent any utf-32 char
+	// so any char can be up to 32 bits long
+	// but they don't have to
+	// they can be 1, 2, or 4 bytes long
+	// you need to use single qoutes for runes
+	// instead of double, which is used for strings
+	// rune is an alias for int32
+	// and they're not easy to work with
+	ru := 'a'
+	fmt.Printf("%v, %T\n", ru, ru)
 }
