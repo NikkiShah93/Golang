@@ -6,6 +6,56 @@ import (
 
 const f int16 = 17
 
+// enumerated constants
+const ec = iota
+
+// we can also do the following
+const (
+	ec1 = iota
+	ec2 = iota
+	ec3 = iota
+)
+
+// or having the compiler infer the values
+const (
+	ec4 = iota
+	ec5
+	ec6
+)
+
+// or use the following approach
+// you can also add numbers to iota
+// and it won't throw an error
+// so you can start from another number
+// if your application requires
+const (
+	catSpecialist = iota
+	dogSpecialist
+	snakeSpecialist
+)
+
+// we can also use bit shifting on iota
+// this way we can raise things
+// to power of two
+// shifting by one level
+// you're multiplying it by two
+const (
+	_  = iota // ignoring the first value
+	KB = 1 << (10 * iota)
+	MB
+	GB
+	TB
+	PB
+)
+
+// we can also use this for setting flags
+// and have boolean flags in one single byte
+const (
+	isAdmin = 1 << iota
+	isHeadquarters
+	canSeeFinancials
+)
+
 func main() {
 	// all the constants
 	// will start with the const keyword
@@ -53,4 +103,39 @@ func main() {
 	// is used in combination with another type
 	// it'll infer it to be of that othe type
 	fmt.Printf("%v, %T\n", g+e, g+e)
+	// next thing is enumerated constants
+	// defined in package level
+	// and is used as a counter
+	fmt.Printf("%v, %T\n", ec, ec)
+	// when defining them as a const block
+	// then they'll increase by 1 each time
+	// and it's scoped to one const block
+	// meaning, it will reset in each block
+	fmt.Printf("%v, %T\n", ec1, ec1)
+	fmt.Printf("%v, %T\n", ec2, ec2)
+	fmt.Printf("%v, %T\n", ec3, ec3)
+	// using the const block in package level
+	var specialistType int = catSpecialist
+	// this will be true even if we don't initilaze the variable
+	// because the default will be 0
+	// which is the same as the first value of iota set
+	// so it's better practice to use the 0th iota
+	// to be the error const
+	// so it won't lead to mistakes in your logic
+	// or maybe assign the 0th value to _
+	// so you won't have to assign memory to it
+	fmt.Printf("%v\n", specialistType == catSpecialist)
+	//using bit shifting with iota
+	fileSize := 400000000.
+	// formatting by 2 decimal places
+	// for a floating number
+	fmt.Printf("%.2fGB\n", fileSize/GB)
+	// using the iota for flags
+	var roles byte = isAdmin | isHeadquarters | canSeeFinancials
+	fmt.Printf("%b\n", roles)
+	// this is a very efficient way to store flags
+	// because you can check is someone is an admin
+	// by the follwing logic
+	fmt.Printf("Is Admin? %v\n", roles&isAdmin == isAdmin)
+
 }
